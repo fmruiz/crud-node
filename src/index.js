@@ -1,12 +1,14 @@
 const express = require("express");
 const { engine } = require("express-handlebars");
 const path = require("path");
+const morgan = require("morgan");
 const routes = require("./routes/index.routes");
 const connectDB = require("./db");
 
 // initialize server
 const app = express();
 
+// connect database
 connectDB();
 
 // engine handlebars
@@ -22,6 +24,8 @@ app.engine(
 app.set("view engine", ".hbs");
 
 // middlewares
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
 // server on

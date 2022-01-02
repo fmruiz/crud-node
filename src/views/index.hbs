@@ -1,1 +1,21 @@
-<h1>hello world!!</h1>
+<form action="/tasks/add" method="POST">
+  <div>
+    <label for="title">Title:</label>
+    <input
+      type="text"
+      name="title"
+      placeholder="write your task title"
+      id="title"
+    />
+  </div>
+
+  <div>
+    <textarea
+      name="description"
+      placeholder="description"
+      id="description"
+    ></textarea>
+  </div>
+
+  <button type="submit">Save task</button>
+</form>
