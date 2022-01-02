@@ -3,7 +3,15 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Hello");
+  res.render('index.hbs')
+});
+
+router.get("/edit", (req, res) => {
+  res.render('edit.hbs')
+});
+
+router.get("/about", (req, res) => {
+  res.render('about.hbs')
 });
 
 module.exports = router;
