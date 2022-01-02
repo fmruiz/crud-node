@@ -1,14 +1,14 @@
-import express from "express";
+const express = require("express");
+const routes = require("./routes/index.routes");
 
 // initialize server
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+// middlewares
+app.use(routes);
 
-// connect server
+// server on
 const PORT = 4000;
-app.listen(4000, () => {
+app.listen(PORT, () => {
   console.log(`Server on port ${PORT}`);
 });
